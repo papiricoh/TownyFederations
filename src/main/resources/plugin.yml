@@ -1,0 +1,4 @@
+name: TownyFederations
+version: '${project.version}'
+main: org.papiricoh.townyfederations.TownyFederation
+api-version: '1.20'
