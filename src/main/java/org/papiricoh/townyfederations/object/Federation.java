@@ -35,4 +35,24 @@ public class Federation {
     private boolean isPresident(Nation nation) {
         return nation.equals(this.president);
     }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void addMember(Nation n) {
+        this.members.put(n.getUUID(), n);
+    }
+
+    public boolean isMember(Nation nation) {
+        if(isPresident(nation)) {
+            return true;
+        }
+        for (Nation n : this.members.values()) {
+            if(n.equals(nation)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
